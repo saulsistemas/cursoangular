@@ -16,6 +16,9 @@ empresa="CANVIA";
 getEdad(){
   return this.edad;
 }
+llamaEmpresa(value:string){
+
+}
   constructor() { }
 
   ngOnInit(): void {

@@ -1,4 +1,10 @@
-<p>Nombre {{nombre}}</p>
+<p>Nombre {{nombre.value}}</p>
 <p>Apellido {{apellido}}</p>
 <p>Edad {{(getEdad()+10 )<18 ? "Menor de edad":"Mayor de edad"}}</p>
-<p>Empresa: {{empresa}}</p>
+<p>Empresa: {{empresa.value}}</p>
+
+Intrucir la Nombre: <input type="text" #nombre (keyup)=0>
+<br>
+Intrucir la Empresa: <input type="text" #empresa (keyup)=0>
+<br>
+<input type="button" value="Enviar" (click)="llamaEmpresa(empresa.value)">
