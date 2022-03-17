@@ -2,15 +2,15 @@
 <p>Apellido {{apellido}}</p>
 <p>Edad {{(getEdad()+10 )<18 ? "Menor de edad":"Mayor de edad"}}</p>
 <p>Otra Edad: {{edad2.value }}</p>
-<p>Empresa: {{empresa.value}}</p>
+<p>Empresa: {{empresa}}</p>
 
 Intrucir la Nombre: <input type="text" #nombre (keyup)=0>
 <br>
 Intrucir la Edad: <input type="text" #edad2 (keyup)=0>
 <br>
-Intrucir la Empresa: <input type="text" #empresa (keyup)=0 [disabled]="habilitacionCuadro">
+<!-- Intrucir la Empresa: <input type="text" #empresa (keyup)=0 [disabled]="habilitacionCuadro"> -->
 <br>
-<input type="button" value="Enviar" (click)="llamaEmpresa(empresa.value)">
+<!-- <input type="button" value="Enviar" (click)="llamaEmpresa(empresa.value)"> -->
 <br>
 {{textoDeRegistro}}
 <br>
@@ -23,3 +23,7 @@ Si registrado
 <br>
 <input type="radio" values="no" name="nRegistro" id="" (click)="setUsuarioRegistrado($event)">
 No registrado
+<br>
+Intrucir la Empresa: <input type="text" (input)="cambiaEmpresa($event)">
+<br>
+Intrucir la Empresa: <input type="text" [(ngModel)]="empresa">

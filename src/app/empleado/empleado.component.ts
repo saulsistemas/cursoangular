@@ -31,12 +31,14 @@ setUsuarioRegistrado(event:Event){
   console.log(event);
   
   //this.textoDeRegistro="si esta registrado";
-if ((<HTMLInputElement>event.target).value=="si") {
-  return this.textoDeRegistro="si esta registrado";
-} else {
-  return this.textoDeRegistro="no esta registrado";
+  if ((<HTMLInputElement>event.target).value=="si") {
+    return this.textoDeRegistro="si esta registrado";
+  } else {
+    return this.textoDeRegistro="no esta registrado";
+  }
 }
-
+cambiaEmpresa(event:Event){
+  this.empresa=(<HTMLInputElement>event.target).value;
 }
   constructor() { }
 
