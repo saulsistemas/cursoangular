@@ -14,8 +14,9 @@ private edad = 8;
 empresa="CANVIA";
 
 habilitacionCuadro=false;
-usuRegistrado=true;
+usuRegistrado=false;
 
+textoDeRegistro="No hay nadie registrado";
 getRegistroUsuario(){
   this.usuRegistrado=true;
 }
@@ -23,6 +24,18 @@ getEdad(){
   return this.edad;
 }
 llamaEmpresa(value:string){
+
+}
+
+setUsuarioRegistrado(event:Event){
+  console.log(event);
+  
+  //this.textoDeRegistro="si esta registrado";
+if ((<HTMLInputElement>event.target).value=="si") {
+  return this.textoDeRegistro="si esta registrado";
+} else {
+  return this.textoDeRegistro="no esta registrado";
+}
 
 }
   constructor() { }

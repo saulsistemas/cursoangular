@@ -12,6 +12,14 @@ Intrucir la Empresa: <input type="text" #empresa (keyup)=0 [disabled]="habilitac
 <br>
 <input type="button" value="Enviar" (click)="llamaEmpresa(empresa.value)">
 <br>
-<input type="checkbox" name="" id="registro" [checked]="usuRegistrado">
+{{textoDeRegistro}}
 <br>
+
 {{getRegistroUsuario()}}
+
+<br>
+<input type="radio" value="si" name="nRegistro" id="" (click)="setUsuarioRegistrado($event)">
+Si registrado
+<br>
+<input type="radio" values="no" name="nRegistro" id="" (click)="setUsuarioRegistrado($event)">
+No registrado
