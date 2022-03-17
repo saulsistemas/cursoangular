@@ -1,10 +1,17 @@
 <p>Nombre {{nombre.value}}</p>
 <p>Apellido {{apellido}}</p>
 <p>Edad {{(getEdad()+10 )<18 ? "Menor de edad":"Mayor de edad"}}</p>
+<p>Otra Edad: {{edad2.value }}</p>
 <p>Empresa: {{empresa.value}}</p>
 
 Intrucir la Nombre: <input type="text" #nombre (keyup)=0>
 <br>
-Intrucir la Empresa: <input type="text" #empresa (keyup)=0>
+Intrucir la Edad: <input type="text" #edad2 (keyup)=0>
+<br>
+Intrucir la Empresa: <input type="text" #empresa (keyup)=0 [disabled]="habilitacionCuadro">
 <br>
 <input type="button" value="Enviar" (click)="llamaEmpresa(empresa.value)">
+<br>
+<input type="checkbox" name="" id="registro" [checked]="usuRegistrado">
+<br>
+{{getRegistroUsuario()}}

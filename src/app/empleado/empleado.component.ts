@@ -13,6 +13,12 @@ apellido = "PEREZ";
 private edad = 8;
 empresa="CANVIA";
 
+habilitacionCuadro=false;
+usuRegistrado=true;
+
+getRegistroUsuario(){
+  this.usuRegistrado=true;
+}
 getEdad(){
   return this.edad;
 }
