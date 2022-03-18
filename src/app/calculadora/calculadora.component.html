@@ -1,0 +1,14 @@
+<div class="container">
+    <form >
+        <!-- TWO WAY BINDING  -->
+        N1:<input type="number" [(ngModel)]="numero1" name="numero1" >
+        <br>
+        N2:<input type="number" [(ngModel)]="numero2" name="numero2" >
+        <br>
+        <input type="submit" class="btn btn-primary" value="Sumar" (click)="sumar()">
+        <input type="submit" class="btn btn-success" value="Restar" (click)="restar()">
+    </form>
+</div>
+
+<!-- INTERPOLACION -->
+<p>Resultado {{resultado}}</p>
