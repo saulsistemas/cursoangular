@@ -7,7 +7,16 @@
     </form>
     <br>
     <br>
-    <!-- if(registro){} -->
-    <p *ngIf="registro">{{message}} con el nombre de {{nombre}} y apellido {{apellido}} </p>
+    <!-- if(registro){}else{} -->
+    <p *ngIf="registro; else sinRegistrar">{{message}} con el nombre de {{nombre}} y apellido {{apellido}} </p>
+    <ng-template #sinRegistrar>
+        <p>Nadie Registrado</p>
+    </ng-template>
+    <br>
+    <br>
+    <h5>Lista de Blog</h5>
+    <ul>
+        <li *ngFor="let entrada of entradas">{{entrada.title}} </li>
+    </ul>
 </div>
 

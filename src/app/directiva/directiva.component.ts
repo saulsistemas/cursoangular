@@ -8,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class DirectivaComponent implements OnInit {
   //INTERPOLACION
   titulo = "Registro de usuarios";
-  message="No esta registrado";
+  message="";
   nombre:string="";
   apellido:string="";
   registro= false;
+  entradas:Array<any> =[];
+
+
   registrarUsuario(){
     //this.nombre;
     //this.apellido;
@@ -20,7 +23,17 @@ export class DirectivaComponent implements OnInit {
   }
 
 
-  constructor() { }
+  constructor() { 
+    this.entradas =[
+      {title:"Python primeros cursos"},
+      {title:"Java primeros cursos"},
+      {title:"Angular primeros cursos"},
+      {title:"PHP primeros cursos"},
+      {title:"LARAVEL primeros cursos"},
+    ];
+    console.log(this.entradas[0].title);
+    
+  }
   ngOnInit(): void {
   }
 
