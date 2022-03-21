@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
 import { DirectivaComponent } from './directiva/directiva.component';
 import { FormEmpleadoComponent } from './form-empleado/form-empleado.component';
+import { EmpleadoHijoComponent } from './empleado-hijo/empleado-hijo.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormEmpleadoComponent } from './form-empleado/form-empleado.component';
     EmpleadoComponent,
     CalculadoraComponent,
     DirectivaComponent,
-    FormEmpleadoComponent, //HAY QUE REGISTRAR NUESTRA CLASE COMPONENTE CREADA
+    FormEmpleadoComponent,
+    EmpleadoHijoComponent, //HAY QUE REGISTRAR NUESTRA CLASE COMPONENTE CREADA
   ],
   imports: [
     BrowserModule, 
