@@ -3,12 +3,20 @@
     <form action="">
         Nombre <input type="text" name="nombre" [(ngModel)]="nombre"><br>
         Apellido <input type="text" name="apellido" [(ngModel)]="apellido"><br>
+        Cargo <input type="text" name="cargo" [(ngModel)]="cargo"><br>
         <input type="submit" value="Enviar" (click)="registrarUsuario()"><br>
     </form>
     <br>
     <br>
     <!-- if(registro){}else{} -->
-    <p *ngIf="registro; else sinRegistrar">{{message}} con el nombre de {{nombre}} y apellido {{apellido}} </p>
+    <p *ngIf="registro; else sinRegistrar">
+        {{message}} con el nombre de {{nombre}} 
+        y apellido {{apellido}} 
+        <!-- OPERADOR TERNARIO  CARGO='SISTEMAS'? verdadero:falso -->
+        y cargo <span [ngStyle]="{color:cargo=='sistemas' ? 'red':'black'}">{{cargo}}</span> 
+
+        <span [ngClass]="{paraDirectores:cargo=='sistemas'}"> NGCLASS para CLASES CSS</span> 
+    </p>
     <ng-template #sinRegistrar>
         <p>Nadie Registrado</p>
     </ng-template>

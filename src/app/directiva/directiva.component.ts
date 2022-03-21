@@ -11,6 +11,7 @@ export class DirectivaComponent implements OnInit {
   message="";
   nombre:string="";
   apellido:string="";
+  cargo:string="";
   registro= false;
   entradas:Array<any> =[];
 
