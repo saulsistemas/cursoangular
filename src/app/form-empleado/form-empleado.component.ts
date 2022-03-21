@@ -14,6 +14,17 @@ export class FormEmpleadoComponent implements OnInit {
     new Empleado('laura','santamaria','ventas',2100),
     new Empleado('carlos','santamaria','gerente',3000),
   ];
+  cuadroNombre:string="";
+  cuadroApellido:string="";
+  cuadroCargo:string="";
+  cuadroSalario:number=0;
+
+  agregarEmpleado(){
+    let miEmpelado=new Empleado(this.cuadroNombre,this.cuadroApellido,this.cuadroCargo,this.cuadroSalario);
+    this.empleados.push(miEmpelado);
+    console.log(this.empleados);
+    
+  }
   constructor() { }
 
   ngOnInit(): void {
