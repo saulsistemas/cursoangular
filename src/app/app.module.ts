@@ -12,7 +12,17 @@ import { EmpleadoHijoComponent } from './empleado-hijo/empleado-hijo.component';
 import { CaracteristicasEmpleadosComponent } from './caracteristicas-empleados/caracteristicas-empleados.component';
 import { ServicioEmpleadosService } from './servicio-empleados.service';
 import { EmpleadoService } from './servicios/empleados.service';
-
+import { HomeComponent } from './home/home.component';
+import { ProyectosComponent } from './proyectos/proyectos.component';
+import { QuienesComponent } from './quienes/quienes.component';
+import { ContactoComponent } from './contacto/contacto.component';
+import { RouterModule, Routes } from '@angular/router';
+const appRoutes:Routes=[
+  {path:'',component:HomeComponent},
+  {path:'proyectos',component:ProyectosComponent},
+  {path:'quientes',component:QuienesComponent},
+  {path:'contacto',component:ContactoComponent},
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,11 +32,16 @@ import { EmpleadoService } from './servicios/empleados.service';
     DirectivaComponent,
     FormEmpleadoComponent,
     EmpleadoHijoComponent,
-    CaracteristicasEmpleadosComponent, //HAY QUE REGISTRAR NUESTRA CLASE COMPONENTE CREADA
+    CaracteristicasEmpleadosComponent,
+    HomeComponent,
+    ProyectosComponent,
+    QuienesComponent,
+    ContactoComponent, //HAY QUE REGISTRAR NUESTRA CLASE COMPONENTE CREADA
   ],
   imports: [
     BrowserModule, 
-    FormsModule //PARA QUE FUNCIONE BANANA BOX [()]
+    FormsModule, //PARA QUE FUNCIONE BANANA BOX [()]
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [
     ServicioEmpleadosService,
