@@ -21,6 +21,7 @@ export class ActualizaComponent implements OnInit {
     this.cuadroApellido = empleado.apellido;
     this.cuadroCargo = empleado.cargo;
     this.cuadroSalario = empleado.salario;
+    this.accion=this.route.snapshot.queryParams['accion'];
   }
   volveHome(){
     this.router.navigate(['']);
@@ -30,17 +31,26 @@ export class ActualizaComponent implements OnInit {
   cuadroCargo:string="";
   cuadroSalario:number=0;
   indice:number;
-
+  accion:string|number;
   actualizaEmpleado(){
-    let miEmpelado=new Empleado(this.cuadroNombre,this.cuadroApellido,this.cuadroCargo,this.cuadroSalario);
-    this.empleadosService.actualizarEmpleadoServicio(this.indice,miEmpelado);
-    console.log(this.empleados);
-    this.volveHome();
+    if (this.accion=='1') {
+      let miEmpelado=new Empleado(this.cuadroNombre,this.cuadroApellido,this.cuadroCargo,this.cuadroSalario);
+      this.empleadosService.actualizarEmpleadoServicio(this.indice,miEmpelado);
+      console.log(this.empleados);
+      this.volveHome();
+    } else {
+      this.empleadosService.eliminarEmpleadoServicio(this.indice);
+      console.log(this.empleados);
+      this.volveHome()
+    }
+    
+
+    
   }
-  eliminarEmpleado(){
-    this.empleadosService.eliminarEmpleadoServicio(this.indice);
-    console.log(this.empleados);
-    this.volveHome();
-  }
+  // eliminarEmpleado(){
+  //   this.empleadosService.eliminarEmpleadoServicio(this.indice);
+  //   console.log(this.empleados);
+  //   this.volveHome();
+  // }
 
 }
