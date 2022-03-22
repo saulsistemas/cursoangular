@@ -1,32 +1,20 @@
 <div class="row">
     <div class="col">
         <div >
-            <table  class="table">
-                <tr>
-                    <td>ID</td>
-                    <td>NOMBRE</td>
-                    <td>APELLIDO</td>
-                    <td>CARGO</td>
-                    <td>SALARIO</td>
-                </tr>
-                <tr >
-                    <td>{{indice+1}}</td>
-                    <td>{{empleadoDeLista.nombre}}
+            <ul>
+                    <li>#{{indice+1}} {{empleadoDeLista.nombre}} {{empleadoDeLista.apellido}} {{empleadoDeLista.cargo}} {{empleadoDeLista.salario}}</li>
                         <tr>
-                            <td><app-caracteristicas-empleados (caracteristicasEmpleados)="agregarCaracteristicas($event)" ></app-caracteristicas-empleados></td>
-                            <td> 
+                            <li><app-caracteristicas-empleados (caracteristicasEmpleados)="agregarCaracteristicas($event)" ></app-caracteristicas-empleados></li>
+                            <li> 
                                 <ul *ngFor="let caracteristicas of arrayCaracteristicas">
                                     <li >{{caracteristicas}} </li>
                                 </ul> 
-                            </td>
+                            </li>
                         </tr>
-                    </td>
-                    <td>{{empleadoDeLista.apellido}}</td>
-                    <td>{{empleadoDeLista.cargo}}</td>
-                    <td>{{empleadoDeLista.salario}}</td>
-                </tr>
-            </table>
-            
+                    
+  
+                
+            </ul>
         </div>
     </div>
 </div>

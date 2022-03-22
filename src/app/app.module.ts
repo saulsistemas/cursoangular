@@ -10,6 +10,7 @@ import { DirectivaComponent } from './directiva/directiva.component';
 import { FormEmpleadoComponent } from './form-empleado/form-empleado.component';
 import { EmpleadoHijoComponent } from './empleado-hijo/empleado-hijo.component';
 import { CaracteristicasEmpleadosComponent } from './caracteristicas-empleados/caracteristicas-empleados.component';
+import { ServicioEmpleadosService } from './servicio-empleados.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { CaracteristicasEmpleadosComponent } from './caracteristicas-empleados/c
     BrowserModule, 
     FormsModule //PARA QUE FUNCIONE BANANA BOX [()]
   ],
-  providers: [],
+  providers: [
+    ServicioEmpleadosService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

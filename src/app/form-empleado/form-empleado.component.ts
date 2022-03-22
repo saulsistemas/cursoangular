@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicioEmpleadosService } from '../servicio-empleados.service';
 import { Empleado } from './empleado.model';
 
 @Component({
@@ -7,6 +8,11 @@ import { Empleado } from './empleado.model';
   styleUrls: ['./form-empleado.component.css']
 })
 export class FormEmpleadoComponent implements OnInit {
+  
+  constructor(private miServicio:ServicioEmpleadosService) { 
+    //console.log(miServicio.muestraMensaje);
+    
+  }
 
   empleados:Empleado[]=[
     new Empleado('saul','santamaria','sistemas',2000),
@@ -21,11 +27,12 @@ export class FormEmpleadoComponent implements OnInit {
 
   agregarEmpleado(){
     let miEmpelado=new Empleado(this.cuadroNombre,this.cuadroApellido,this.cuadroCargo,this.cuadroSalario);
+    this.miServicio.muestraMensaje("nombre del empleado " + miEmpelado.nombre)
     this.empleados.push(miEmpelado);
     console.log(this.empleados);
     
   }
-  constructor() { }
+  
 
   ngOnInit(): void {
   }
