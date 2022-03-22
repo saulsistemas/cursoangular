@@ -9,6 +9,7 @@ import { CalculadoraComponent } from './calculadora/calculadora.component';
 import { DirectivaComponent } from './directiva/directiva.component';
 import { FormEmpleadoComponent } from './form-empleado/form-empleado.component';
 import { EmpleadoHijoComponent } from './empleado-hijo/empleado-hijo.component';
+import { CaracteristicasEmpleadosComponent } from './caracteristicas-empleados/caracteristicas-empleados.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EmpleadoHijoComponent } from './empleado-hijo/empleado-hijo.component';
     CalculadoraComponent,
     DirectivaComponent,
     FormEmpleadoComponent,
-    EmpleadoHijoComponent, //HAY QUE REGISTRAR NUESTRA CLASE COMPONENTE CREADA
+    EmpleadoHijoComponent,
+    CaracteristicasEmpleadosComponent, //HAY QUE REGISTRAR NUESTRA CLASE COMPONENTE CREADA
   ],
   imports: [
     BrowserModule, 

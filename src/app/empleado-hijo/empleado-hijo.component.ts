@@ -10,7 +10,10 @@ export class EmpleadoHijoComponent implements OnInit {
   @Input()empleadoDeLista:Empleado;
   @Input()indice:number;
 
-
+  arrayCaracteristicas:Array<any> = [''];
+  agregarCaracteristicas(nuevaCaracteristica:string){
+    this.arrayCaracteristicas.push(nuevaCaracteristica);
+  }
   constructor() { }
 
   ngOnInit(): void {

@@ -11,7 +11,16 @@
                 </tr>
                 <tr >
                     <td>{{indice+1}}</td>
-                    <td>{{empleadoDeLista.nombre}}</td>
+                    <td>{{empleadoDeLista.nombre}}
+                        <tr>
+                            <td><app-caracteristicas-empleados (caracteristicasEmpleados)="agregarCaracteristicas($event)" ></app-caracteristicas-empleados></td>
+                            <td> 
+                                <ul *ngFor="let caracteristicas of arrayCaracteristicas">
+                                    <li >{{caracteristicas}} </li>
+                                </ul> 
+                            </td>
+                        </tr>
+                    </td>
                     <td>{{empleadoDeLista.apellido}}</td>
                     <td>{{empleadoDeLista.cargo}}</td>
                     <td>{{empleadoDeLista.salario}}</td>
