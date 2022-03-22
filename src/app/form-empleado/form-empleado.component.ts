@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioEmpleadosService } from '../servicio-empleados.service';
+import { EmpleadoService } from '../servicios/empleados.service';
 import { Empleado } from './empleado.model';
 
 @Component({
@@ -8,18 +9,18 @@ import { Empleado } from './empleado.model';
   styleUrls: ['./form-empleado.component.css']
 })
 export class FormEmpleadoComponent implements OnInit {
-  
-  constructor(private miServicio:ServicioEmpleadosService) { 
+  empleados:Empleado[]=[];
+  constructor(private miServicio:ServicioEmpleadosService, private empleadosService:EmpleadoService) { 
     //console.log(miServicio.muestraMensaje);
-    
+    //PARA CARGAR DENTRO DEL ARRAY LO QUE TIENE MI SERVICIO
+    //VARIABLE EMPLEADOS ARRAY = VARIABLE EMPLEADOS QUE CONTIENE DATOS EN SERVICIO
+    //this.empleados=this.empleadosService.empleados;
+  }
+  ngOnInit(): void {
+    this.empleados=this.empleadosService.empleados;
   }
 
-  empleados:Empleado[]=[
-    new Empleado('saul','santamaria','sistemas',2000),
-    new Empleado('claudio','santamaria','contabilidad',2000),
-    new Empleado('laura','santamaria','ventas',2100),
-    new Empleado('carlos','santamaria','gerente',3000),
-  ];
+  
   cuadroNombre:string="";
   cuadroApellido:string="";
   cuadroCargo:string="";
@@ -28,13 +29,11 @@ export class FormEmpleadoComponent implements OnInit {
   agregarEmpleado(){
     let miEmpelado=new Empleado(this.cuadroNombre,this.cuadroApellido,this.cuadroCargo,this.cuadroSalario);
     this.miServicio.muestraMensaje("nombre del empleado " + miEmpelado.nombre)
-    this.empleados.push(miEmpelado);
+    this.empleadosService.agregarEmpleadoServicio(miEmpelado);
     console.log(this.empleados);
     
   }
   
 
-  ngOnInit(): void {
-  }
-
+  
 }
