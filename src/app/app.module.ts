@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule} from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { EmpleadosComponent } from './empleados/empleados.component';
 import { EmpleadoComponent } from './empleado/empleado.component';
@@ -19,6 +19,7 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ActualizaComponent } from './actualiza/actualiza.component';
 import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
+import { DataService } from './servicios/data.service';
 const appRoutes:Routes=[
   {path:'',component:HomeComponent},
   {path:'proyectos',component:ProyectosComponent},
@@ -48,10 +49,12 @@ const appRoutes:Routes=[
     BrowserModule, 
     FormsModule, //PARA QUE FUNCIONE BANANA BOX [()]
     RouterModule.forRoot(appRoutes),
+    HttpClientModule,
   ],
   providers: [
     ServicioEmpleadosService,
-    EmpleadoService
+    EmpleadoService,
+    DataService,
   ],
   bootstrap: [AppComponent]
 })
