@@ -18,12 +18,14 @@ import { QuienesComponent } from './quienes/quienes.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ActualizaComponent } from './actualiza/actualiza.component';
+import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
 const appRoutes:Routes=[
   {path:'',component:HomeComponent},
   {path:'proyectos',component:ProyectosComponent},
   {path:'quienes',component:QuienesComponent},
   {path:'contacto',component:ContactoComponent},
   {path:'actualiza/:id',component:ActualizaComponent},
+  {path:'**',component:ErrorPersonalizadoComponent},//LOS **INDICAN SI NO EXISTE LA PAGINA
 ];
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ const appRoutes:Routes=[
     ProyectosComponent,
     QuienesComponent,
     ContactoComponent,
-    ActualizaComponent, //HAY QUE REGISTRAR NUESTRA CLASE COMPONENTE CREADA
+    ActualizaComponent,
+    ErrorPersonalizadoComponent, //HAY QUE REGISTRAR NUESTRA CLASE COMPONENTE CREADA
   ],
   imports: [
     BrowserModule, 
