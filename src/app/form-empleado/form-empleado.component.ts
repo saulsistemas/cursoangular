@@ -28,7 +28,7 @@ export class FormEmpleadoComponent implements OnInit {
 
   agregarEmpleado(){
     let miEmpelado=new Empleado(this.cuadroNombre,this.cuadroApellido,this.cuadroCargo,this.cuadroSalario);
-    this.miServicio.muestraMensaje("nombre del empleado " + miEmpelado.nombre)
+    //this.miServicio.muestraMensaje("nombre del empleado " + miEmpelado.nombre)
     this.empleadosService.agregarEmpleadoServicio(miEmpelado);
     console.log(this.empleados);
     

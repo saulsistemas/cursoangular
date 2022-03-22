@@ -10,7 +10,6 @@ export class CaracteristicasEmpleadosComponent implements OnInit {
 
   @Output() caracteristicasEmpleados =new EventEmitter<string>();
   constructor(private miServicio:ServicioEmpleadosService) { 
-
   }
   agregasrCaracteristicas(value:string){
     this.miServicio.muestraMensaje(value);
