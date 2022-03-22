@@ -2,7 +2,12 @@
     <div class="col">
         <div >
             <ul>
-                    <li>#{{indice+1}} {{empleadoDeLista.nombre}} {{empleadoDeLista.apellido}} {{empleadoDeLista.cargo}} {{empleadoDeLista.salario}}</li>
+                    <li>
+                        <a [routerLink]="['/actualiza',indice]">
+                        #{{indice+1}} {{empleadoDeLista.nombre}} {{empleadoDeLista.apellido}} {{empleadoDeLista.cargo}} {{empleadoDeLista.salario}}
+                        </a>
+                    </li>
+                        
                         <tr>
                             <li><app-caracteristicas-empleados (caracteristicasEmpleados)="agregarCaracteristicas($event)" ></app-caracteristicas-empleados></li>
                             <li> 

@@ -17,11 +17,13 @@ import { ProyectosComponent } from './proyectos/proyectos.component';
 import { QuienesComponent } from './quienes/quienes.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ActualizaComponent } from './actualiza/actualiza.component';
 const appRoutes:Routes=[
   {path:'',component:HomeComponent},
   {path:'proyectos',component:ProyectosComponent},
   {path:'quienes',component:QuienesComponent},
   {path:'contacto',component:ContactoComponent},
+  {path:'actualiza/:id',component:ActualizaComponent},
 ];
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ const appRoutes:Routes=[
     HomeComponent,
     ProyectosComponent,
     QuienesComponent,
-    ContactoComponent, //HAY QUE REGISTRAR NUESTRA CLASE COMPONENTE CREADA
+    ContactoComponent,
+    ActualizaComponent, //HAY QUE REGISTRAR NUESTRA CLASE COMPONENTE CREADA
   ],
   imports: [
     BrowserModule, 
