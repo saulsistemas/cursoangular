@@ -33,8 +33,12 @@ export class ActualizaComponent implements OnInit {
 
   actualizaEmpleado(){
     let miEmpelado=new Empleado(this.cuadroNombre,this.cuadroApellido,this.cuadroCargo,this.cuadroSalario);
-    //this.miServicio.muestraMensaje("nombre del empleado " + miEmpelado.nombre)
     this.empleadosService.actualizarEmpleadoServicio(this.indice,miEmpelado);
+    console.log(this.empleados);
+    this.volveHome();
+  }
+  eliminarEmpleado(){
+    this.empleadosService.eliminarEmpleadoServicio(this.indice);
     console.log(this.empleados);
     this.volveHome();
   }

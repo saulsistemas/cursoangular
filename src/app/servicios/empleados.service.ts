@@ -32,4 +32,7 @@ export class EmpleadoService{
         empleadoModificado.cargo=empleado.cargo;
         empleadoModificado.salario=empleado.salario;
     }
+    eliminarEmpleadoServicio(indice:number){
+        this.empleados.splice(indice,1);
+    }
 }
